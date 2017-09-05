@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<inset
+    android:insetBottom = "0px"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    >
+    <selector>
+        <item
+            android:state_pressed="true"
+            >
+            <shape
+                android:shape="rectangle"
+                >
+                <corners
+                    android:topLeftRadius="2dip"
+                    android:topRightRadius="2dip"
+                    android:bottomLeftRadius="2dip"
+                    android:bottomRightRadius="2dip"
+                    />
+                <solid
+                    android:color="#E0E0E0"
+                    />
+            </shape>
+        </item>
+        <item>
+            <shape
+                android:shape = "rectangle"
+                >
+                <corners
+                    android:topLeftRadius = "2dip"
+                    android:topRightRadius = "2dip"
+                    android:bottomLeftRadius = "2dip"
+                    android:bottomRightRadius = "2dip"
+                    />
+                <solid
+                    android:color = "@android:color/transparent"
+                    />
+            </shape>
+        </item>
+    </selector>
+</inset>

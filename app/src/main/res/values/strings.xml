@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tagihan Listrik</string>
+    <string name="image_view_icon_user_folder">image view icon user folder</string>
+    <string name="cek_tagihan">cek tagihan</string>
+</resources>

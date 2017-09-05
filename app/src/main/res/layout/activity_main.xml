@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nikoyuwono.toolbarpanel.ToolbarPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:panelId="@+id/toolbar_panel_layout_activity_main"
+    app:pullableToolbarId="@+id/toolbar_activity_main"
+    tools:context="com.tagihanlistrik.ysn.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relative_layout_content_container_activity_main"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_layout_container_id_pelanggan_activity_main"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/background_id_pelanggan"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_id_pelanggan"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="ID Pelanggan"
+                    android:textAllCaps="true"
+                    android:textSize="12sp"
+                    android:typeface="monospace"
+                    />
+                
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_text_id_pelanggan_activity_main"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:padding="10dp"
+                        android:typeface="monospace"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:layout_marginRight="33dp"
+                        android:layout_marginEnd="33dp"
+                        android:background="@android:color/transparent"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/relative_layout_container_user_folder_activity_main"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="6dp"
+                        android:paddingRight="6dp"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="6dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_user_folder_96"
+                            android:contentDescription="@string/image_view_icon_user_folder"
+                            />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_toLeftOf="@+id/relative_layout_container_user_folder_activity_main"
+                        android:layout_toStartOf="@+id/relative_layout_container_user_folder_activity_main"
+                        android:layout_centerVertical="true"
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_cek_tagihan_activity_main"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="@string/cek_tagihan"
+                android:textAllCaps="true"
+                android:textSize="14dp"
+                android:textColor="#FFFFFF"
+                android:typeface="monospace"
+                android:background="@drawable/background_button_cek_tagihan"
+                style="?android:attr/borderlessButtonStyle"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_activity_main"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_layout_panel_activity_main"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        >
+
+        <include
+            layout="@layout/panel_data_tagihan"
+            android:id="@+id/include_panel_data_tagihan_activity_main"
+            />
+
+    </LinearLayout>
+
+</com.nikoyuwono.toolbarpanel.ToolbarPanelLayout>
