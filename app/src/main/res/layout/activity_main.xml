@@ -98,6 +98,7 @@
                         android:layout_toLeftOf="@+id/relative_layout_container_user_folder_activity_main"
                         android:layout_toStartOf="@+id/relative_layout_container_user_folder_activity_main"
                         android:layout_centerVertical="true"
+                        />
 
                 </RelativeLayout>
 
