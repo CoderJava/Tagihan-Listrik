@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:panelId="@+id/toolbar_panel_layout_activity_main"
+    android:id="@+id/toolbar_panel_layout"
+    app:panelId="@+id/linear_layout_panel_activity_main"
     app:pullableToolbarId="@+id/toolbar_activity_main"
-    tools:context="com.tagihanlistrik.ysn.MainActivity">
+    tools:context="com.tagihanlistrik.ysn.views.main.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -108,11 +109,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_cek_tagihan_activity_main"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:text="@string/cek_tagihan"
+                android:text="@string/check_the_bill"
                 android:textAllCaps="true"
                 android:textSize="14dp"
                 android:textColor="#FFFFFF"

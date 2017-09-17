@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="11dp"
-                    android:text="@string/detail_tagihan"
+                    android:text="@string/bill_details"
                     android:textAllCaps="true"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nomor_pelanggan"
+                    android:text="@string/customer_number"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp" />
 
@@ -60,7 +60,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nama_pelanggan"
+                    android:text="@string/customer_name"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp" />
 
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/periode_tagihan"
+                    android:text="@string/bill_period"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp"
                     />
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tagihan"
+                    android:text="@string/bill"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp" />
 
@@ -110,7 +110,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/biaya_admin"
+                    android:text="@string/admin_fee"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp"
                     />
@@ -128,7 +128,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/total_tagihan"
+                    android:text="@string/total_bill"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp" />
 

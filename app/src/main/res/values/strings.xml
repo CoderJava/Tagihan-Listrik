@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Tagihan Listrik</string>
     <string name="image_view_icon_user_folder">image view icon user folder</string>
-    <string name="cek_tagihan">cek tagihan</string>
-    <string name="detail_tagihan">Detail Tagihan</string>
-    <string name="nomor_pelanggan">Nomor Pelanggan</string>
+    <string name="check_the_bill">Check the Bill</string>
+    <string name="bill_details">Bill Details</string>
+    <string name="customer_number">Customer Number</string>
     <string name="unknown">unknown</string>
-    <string name="nama_pelanggan">Nama Pelanggan</string>
-    <string name="total_tagihan">Total Tagihan</string>
-    <string name="tagihan">Tagihan</string>
-    <string name="biaya_admin">Biaya Admin</string>
-    <string name="periode_tagihan">Periode Tagihan</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="total_bill">Total Bill</string>
+    <string name="bill">Bill</string>
+    <string name="admin_fee">Admin Fee</string>
+    <string name="bill_period">Bill Period</string>
 </resources>
