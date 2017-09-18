@@ -7,7 +7,8 @@ import com.tagihanlistrik.ysn.db.SettingsDb
 import com.tagihanlistrik.ysn.views.base.MvpPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import okhttp3.ResponseBody
+import okhttp3.Response
+import org.json.JSONObject
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainPresenter : MvpPresenter<MainView> {
 
     private val TAG = javaClass.simpleName
-    private var mainView: MainView? =  null
+    private var mainView: MainView? = null
 
     override fun onAttachView(mvpView: MainView) {
         mainView = mvpView
@@ -40,7 +41,6 @@ class MainPresenter : MvpPresenter<MainView> {
     }
 
     fun onCheckTheBill(customerId: String, phoneNumber: String) {
-        // todo: do something in here
         val retrofit = Retrofit.Builder()
                 .baseUrl(BuildConfig.BASE_URL_API_BISA_TOP_UP)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -55,16 +55,19 @@ class MainPresenter : MvpPresenter<MainView> {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        {
-                            responseBody: ResponseBody ->
-
+                        { response: Response ->
+                            val jsonObjectResponseBody = JSONObject(
+                                    response.body()?.string()
+                            )
+                            val error = jsonObjectResponseBody.getBoolean("error")
+                            if (error) {
+                                // todo: do something in here
+                            } else {
+                                // todo: do something in here
+                            }
                         },
-                        {
-                            t: Throwable ->
-
-                        },
-                        {
-
+                        { throwable: Throwable ->
+                            // todo: do something in here
                         }
                 )
     }

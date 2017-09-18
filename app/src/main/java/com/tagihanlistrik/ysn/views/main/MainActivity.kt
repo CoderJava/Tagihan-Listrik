@@ -102,14 +102,25 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
                         .text
                         .toString()
                         .trim()
-                if (customerId.isEmpty()) {
-                    Toast.makeText(
+                val phoneNumber = edit_text_phone_number_activity_main
+                        .text
+                        .toString()
+                        .trim()
+                when {
+                    customerId.isEmpty() -> Toast.makeText(
                             this@MainActivity,
                             "Customer ID is empty",
                             Toast.LENGTH_SHORT
                     ).show()
-                } else {
-                    mainPresenter?.onCheckTheBill(customerId)
+                    phoneNumber.isEmpty() -> Toast.makeText(
+                            this@MainActivity,
+                            "Phone Number is empty",
+                            Toast.LENGTH_SHORT
+                    ).show()
+                    else -> mainPresenter?.onCheckTheBill(
+                            customerId = customerId,
+                            phoneNumber = phoneNumber
+                    )
                 }
             }
             R.id.button_simpan_panel_data_tagihan -> {
