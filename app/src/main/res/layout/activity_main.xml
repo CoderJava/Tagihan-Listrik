@@ -25,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linear_layout_container_id_pelanggan_activity_main"
+                android:id="@+id/linear_layout_container_customer_id_activity_main"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
@@ -41,7 +41,7 @@
                     android:background="@drawable/background_id_pelanggan"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="ID Pelanggan"
+                    android:text="Customer ID"
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:typeface="monospace"
@@ -55,7 +55,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/edit_text_id_pelanggan_activity_main"
+                        android:id="@+id/edit_text_customer_id_activity_main"
                         android:text=""
                         android:textSize="12sp"
                         android:padding="10dp"
@@ -105,10 +105,59 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_layout_container_phone_number_activity_main"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/background_id_pelanggan"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_id_pelanggan"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/phone_number"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:typeface="monospace"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_text_phone_number_activity_main"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:padding="10dp"
+                        android:typeface="monospace"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:paddingLeft="15dp"
+                        android:paddingStart="15dp"
+                        android:background="@android:color/transparent"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_cek_tagihan_activity_main"
+                android:id="@+id/button_check_the_bill_activity_main"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -146,7 +195,7 @@
 
         <include
             layout="@layout/panel_data_tagihan"
-            android:id="@+id/include_panel_data_tagihan_activity_main"
+            android:id="@+id/include_panel_data_bill_activity_main"
             />
 
     </LinearLayout>

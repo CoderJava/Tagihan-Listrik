@@ -10,4 +10,7 @@
     <string name="bill">Bill</string>
     <string name="admin_fee">Admin Fee</string>
     <string name="bill_period">Bill Period</string>
+    <string name="simpan">Simpan</string>
+    <string name="batal">Batal</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

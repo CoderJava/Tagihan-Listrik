@@ -141,6 +141,58 @@
                     android:textColor="@color/colorText"
                     android:textSize="15sp" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorSubText"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_simpan_panel_data_tagihan"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:text="@string/simpan"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingTop="9dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="9dp"
+                        android:paddingLeft="10dp"
+                        android:layout_toLeftOf="@+id/button_batal_panel_data_tagihan"
+                        android:layout_toStartOf="@+id/button_batal_panel_data_tagihan"
+                        android:background="@drawable/background_button_simpan_tagihan"
+                        />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_batal_panel_data_tagihan"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:text="@string/batal"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingTop="9dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="9dp"
+                        android:paddingLeft="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:background="@drawable/background_button_simpan_tagihan"
+                        />
+
+                </RelativeLayout>
+
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

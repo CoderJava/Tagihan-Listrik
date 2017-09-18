@@ -4,7 +4,6 @@ import android.content.Context
 import com.tagihanlistrik.ysn.model.setting.Settings
 import io.realm.Realm
 import io.realm.RealmConfiguration
-import io.realm.RealmResults
 import io.realm.exceptions.RealmMigrationNeededException
 import kotlin.properties.Delegates
 
@@ -29,7 +28,7 @@ class SettingsDb(context: Context) {
 
     /** Save new data */
     fun saveSettings(checkAutomatically: String,
-                            customerId: String): Boolean {
+                     customerId: String): Boolean {
         val settings = Settings(
                 id = (System.currentTimeMillis() / 1000).toInt(),
                 checkAutomatically = checkAutomatically,
