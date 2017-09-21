@@ -1,9 +1,10 @@
 package com.tagihanlistrik.ysn.api.bill
 
+import com.tagihanlistrik.ysn.BuildConfig
 import io.reactivex.Observable
-import okhttp3.Response
 import okhttp3.ResponseBody
-import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 /**
@@ -11,11 +12,12 @@ import retrofit2.http.Query
  */
 interface ApiBisaTopUp {
 
-    @GET("tagihan/cek")
+    @Headers("X-Authorization: " + BuildConfig.API_KEY)
+    @POST("tagihan/cek")
     fun checkTheBill(
             @Query("product") product: String = "PLN",
             @Query("phone_number") phoneNumber: String,
             @Query("nomor_rekening") nomorRekening: String
-    ): Observable<Response>
+    ): Observable<ResponseBody>
 
 }

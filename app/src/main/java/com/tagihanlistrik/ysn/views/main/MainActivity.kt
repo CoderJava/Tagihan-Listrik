@@ -1,7 +1,9 @@
 package com.tagihanlistrik.ysn.views.main
 
 import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
 
     private fun doLoadData() {
         progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Data tagihan")
+        progressDialog.setMessage("Please wait")
         progressDialog.setCancelable(false)
         mainPresenter?.onLoadData(this)
     }
@@ -78,10 +80,11 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         mainPresenter?.onDetachView()
     }
 
-    override fun loadData(runService: String, customerId: String) {
-        if (runService.equals("enabled", true)) {
+    override fun loadData() {
+        // todo: do something in here
+        /*if (runService.equals("enabled", true)) {
             // todo: do something in here
-            /*startService(Intent(this, ServiceTagihanListrik::class.java))*/
+            *//*startService(Intent(this, ServiceTagihanListrik::class.java))*//*
         }
 
         if (!customerId.equals("not set", true) && runService.equals("enabled", true)) {
@@ -92,7 +95,7 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         if (bundle != null) {
             val customerId = bundle.getString("customerId")
             edit_text_customer_id_activity_main.setText(customerId)
-        }
+        }*/
     }
 
     override fun onClick(view: View?) {
@@ -117,10 +120,13 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
                             "Phone Number is empty",
                             Toast.LENGTH_SHORT
                     ).show()
-                    else -> mainPresenter?.onCheckTheBill(
-                            customerId = customerId,
-                            phoneNumber = phoneNumber
-                    )
+                    else -> {
+                        progressDialog.show()
+                        mainPresenter?.onCheckTheBill(
+                                customerId = customerId,
+                                phoneNumber = phoneNumber
+                        )
+                    }
                 }
             }
             R.id.button_simpan_panel_data_tagihan -> {
@@ -138,4 +144,25 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         }
     }
 
+    override fun checkTheBillFailed(message: String?) {
+        progressDialog.dismiss()
+        showDialogMessage(message = message)
+    }
+
+    private fun showDialogMessage(message: String?) {
+        val alertDialogBuilder = AlertDialog.Builder(this@MainActivity)
+        val alertDialogMessage = alertDialogBuilder
+                .setTitle("Info")
+                .setMessage(message)
+                .setPositiveButton("OK", { dialogInterface: DialogInterface?, _: Int ->
+                    dialogInterface?.dismiss()
+                })
+                .create()
+        alertDialogMessage.show()
+    }
+
+    override fun checkTheBill() {
+        // todo: do something in here
+        progressDialog.dismiss()
+    }
 }

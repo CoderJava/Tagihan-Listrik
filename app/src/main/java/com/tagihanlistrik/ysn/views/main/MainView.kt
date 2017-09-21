@@ -7,6 +7,10 @@ import com.tagihanlistrik.ysn.views.base.MvpView
  */
 interface MainView : MvpView {
 
-    fun loadData(runService: String = "enabled", customerId: String = "not set")
+    fun loadData()
+
+    fun checkTheBillFailed(message: String?)
+
+    fun checkTheBill()
 
 }
