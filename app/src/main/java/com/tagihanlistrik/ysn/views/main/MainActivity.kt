@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Toast
 import com.nikoyuwono.toolbarpanel.ToolbarPanelLayout
 import com.tagihanlistrik.ysn.R
+import com.tagihanlistrik.ysn.model.bill.Bill
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.panel_data_tagihan.view.*
 
@@ -145,7 +146,7 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
     }
 
     override fun checkTheBillFailed(message: String?) {
-        progressDialog.dismiss()
+        dismissProgressDialog()
         showDialogMessage(message = message)
     }
 
@@ -161,8 +162,14 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         alertDialogMessage.show()
     }
 
-    override fun checkTheBill() {
-        // todo: do something in here
-        progressDialog.dismiss()
+    override fun checkTheBill(bill: Bill) {
+        dismissProgressDialog()
+        TODO(reason = "do something in here")
+    }
+
+    private fun dismissProgressDialog() {
+        if (progressDialog.isShowing) {
+            progressDialog.dismiss()
+        }
     }
 }

@@ -52,6 +52,7 @@
                     android:layout_height="wrap_content"
                     >
 
+                    <!--android:layout_marginEnd=33dp-->
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -65,8 +66,7 @@
                         android:paddingEnd="0dp"
                         android:paddingStart="15dp"
                         android:paddingLeft="15dp"
-                        android:layout_marginRight="33dp"
-                        android:layout_marginEnd="33dp"
+                        android:layout_marginEnd="0dp"
                         android:background="@android:color/transparent"
                         />
 
@@ -81,6 +81,7 @@
                         android:paddingRight="6dp"
                         android:paddingBottom="6dp"
                         android:paddingLeft="6dp"
+                        android:visibility="gone"
                         >
 
                         <ImageView

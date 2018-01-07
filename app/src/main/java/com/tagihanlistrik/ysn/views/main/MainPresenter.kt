@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.Log
 import com.tagihanlistrik.ysn.BuildConfig
 import com.tagihanlistrik.ysn.api.bill.ApiBisaTopUp
+import com.tagihanlistrik.ysn.model.bill.Bill
+import com.tagihanlistrik.ysn.model.bill.Data
 import com.tagihanlistrik.ysn.views.base.MvpPresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -70,7 +72,42 @@ class MainPresenter : MvpPresenter<MainView> {
                             val jsonObjectResponseBody = JSONObject(
                                     response.string()
                             )
-                            // todo: do something in here
+                            val error = jsonObjectResponseBody.getBoolean("error")
+                            val message = jsonObjectResponseBody.getString("message")
+                            when (error) {
+                                true -> {
+                                    mainView?.checkTheBillFailed(message)
+                                }
+                                else -> {
+                                    val jsonObjectData = jsonObjectResponseBody.getJSONObject("data")
+                                    val noPelanggan = jsonObjectData.getString("no_pelanggan")
+                                    val productName = jsonObjectData.getString("product_name")
+                                    val jumlahTagihan = jsonObjectData.getInt("jumlah_tagihan")
+                                    val jumlahBayar = jsonObjectData.getInt("jumlah_bayar")
+                                    val admin = jsonObjectData.getInt("admin")
+                                    val terbayar = jsonObjectData.getInt("terbayar")
+                                    val nama = jsonObjectData.getString("nama")
+                                    val periode = jsonObjectData.getString("periode")
+                                    val tagihanId = jsonObjectData.getInt("tagihan_id")
+                                    val data = Data(
+                                            noPelanggan = noPelanggan,
+                                            productName = productName,
+                                            jumlahBayar = jumlahBayar,
+                                            jumlahTagihan = jumlahTagihan,
+                                            admin = admin,
+                                            terbayar = terbayar,
+                                            nama = nama,
+                                            periode = periode,
+                                            tagihanId = tagihanId
+                                    )
+                                    val bill = Bill(
+                                            error = error,
+                                            message = message,
+                                            data = data
+                                    )
+                                    mainView?.checkTheBill(bill)
+                                }
+                            }
                         },
                         { throwable: Throwable ->
                             Log.d(TAG, "onError: " + throwable.message)

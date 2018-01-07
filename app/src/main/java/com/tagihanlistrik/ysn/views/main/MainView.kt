@@ -1,5 +1,6 @@
 package com.tagihanlistrik.ysn.views.main
 
+import com.tagihanlistrik.ysn.model.bill.Bill
 import com.tagihanlistrik.ysn.views.base.MvpView
 
 /**
@@ -11,6 +12,6 @@ interface MainView : MvpView {
 
     fun checkTheBillFailed(message: String?)
 
-    fun checkTheBill()
+    fun checkTheBill(bill: Bill)
 
 }
