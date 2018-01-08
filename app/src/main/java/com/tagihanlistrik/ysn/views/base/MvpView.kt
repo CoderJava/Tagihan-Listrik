@@ -5,8 +5,8 @@ package com.tagihanlistrik.ysn.views.base
  */
 interface MvpView {
 
-    fun onAttach()
+    fun onAttachMvp()
 
-    fun onDetach()
+    fun onDetachMvp()
 
 }

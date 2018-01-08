@@ -1,4 +1,6 @@
 package com.tagihanlistrik.ysn.model.bill
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 
@@ -21,4 +23,12 @@ data class Data(
 		@SerializedName("nama") val nama: String,
 		@SerializedName("periode") val periode: String,
 		@SerializedName("tagihan_id") val tagihanId: Int
-)
+) : Parcelable {
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun describeContents(): Int {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+}

@@ -1,17 +1,18 @@
 package com.tagihanlistrik.ysn.views.main
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import com.nikoyuwono.toolbarpanel.ToolbarPanelLayout
 import com.tagihanlistrik.ysn.R
 import com.tagihanlistrik.ysn.model.bill.Bill
+import com.tagihanlistrik.ysn.views.bill.BillBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.panel_data_tagihan.view.*
 
 class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
 
@@ -23,9 +24,8 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initPresenter()
-        onAttach()
+        onAttachMvp()
         initToolbar()
-        initViews()
         initListeners()
         doLoadData()
     }
@@ -35,18 +35,8 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         setSupportActionBar(toolbar_activity_main)
     }
 
-    private fun initViews() {
-        toolbar_panel_layout.lockMode = ToolbarPanelLayout.LOCK_MODE_LOCKED_OPEN
-    }
-
     private fun initListeners() {
         button_check_the_bill_activity_main
-                .setOnClickListener(this)
-        include_panel_data_bill_activity_main
-                .button_simpan_panel_data_tagihan
-                .setOnClickListener(this)
-        include_panel_data_bill_activity_main
-                .button_batal_panel_data_tagihan
                 .setOnClickListener(this)
         relative_layout_container_user_folder_activity_main
                 .setOnClickListener(this)
@@ -64,20 +54,20 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
     }
 
     override fun onResume() {
-        onAttach()
+        onAttachMvp()
         super.onResume()
     }
 
     override fun onDestroy() {
-        onDetach()
+        onDetachMvp()
         super.onDestroy()
     }
 
-    override fun onAttach() {
+    override fun onAttachMvp() {
         mainPresenter?.onAttachView(this)
     }
 
-    override fun onDetach() {
+    override fun onDetachMvp() {
         mainPresenter?.onDetachView()
     }
 
@@ -122,19 +112,14 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
                             Toast.LENGTH_SHORT
                     ).show()
                     else -> {
-                        progressDialog.show()
+                        showProgressDialog()
+                        hideSoftKeyboard()
                         mainPresenter?.onCheckTheBill(
                                 customerId = customerId,
                                 phoneNumber = phoneNumber
                         )
                     }
                 }
-            }
-            R.id.button_simpan_panel_data_tagihan -> {
-                // todo: do something in here
-            }
-            R.id.button_batal_panel_data_tagihan -> {
-                // todo: do something in here
             }
             R.id.relative_layout_container_user_folder_activity_main -> {
                 // todo: do something in here
@@ -143,6 +128,19 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
                 /** nothing to do in here */
             }
         }
+    }
+
+    private fun hideSoftKeyboard() {
+        val view = currentFocus
+        if (view != null) {
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+
+    }
+
+    private fun showProgressDialog() {
+        progressDialog.show()
     }
 
     override fun checkTheBillFailed(message: String?) {
@@ -164,7 +162,12 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
 
     override fun checkTheBill(bill: Bill) {
         dismissProgressDialog()
-        TODO(reason = "do something in here")
+        val data = bill.data
+        val bundleBill = Bundle()
+        bundleBill.putParcelable("dataBill", data)
+        val billBottomSheetDialogFragment = BillBottomSheetDialogFragment()
+        billBottomSheetDialogFragment.arguments = bundleBill
+        billBottomSheetDialogFragment.show(supportFragmentManager, TAG)
     }
 
     private fun dismissProgressDialog() {

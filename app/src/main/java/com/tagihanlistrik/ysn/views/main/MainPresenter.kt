@@ -85,7 +85,12 @@ class MainPresenter : MvpPresenter<MainView> {
                                     val jumlahTagihan = jsonObjectData.getInt("jumlah_tagihan")
                                     val jumlahBayar = jsonObjectData.getInt("jumlah_bayar")
                                     val admin = jsonObjectData.getInt("admin")
-                                    val terbayar = jsonObjectData.getInt("terbayar")
+                                    val terbayar: Int
+                                    if (jsonObjectData.isNull("terbayar")) {
+                                        terbayar = 0
+                                    } else {
+                                        terbayar = jsonObjectData.getInt("terbayar")
+                                    }
                                     val nama = jsonObjectData.getString("nama")
                                     val periode = jsonObjectData.getString("periode")
                                     val tagihanId = jsonObjectData.getInt("tagihan_id")

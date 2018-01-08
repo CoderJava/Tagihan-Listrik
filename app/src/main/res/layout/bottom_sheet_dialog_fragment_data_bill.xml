@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="56dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_view_data_pelanggan_panel_data_tagihan"
+            android:id="@+id/card_view_container_data_customer_bottom_sheet_dialog_fragment_data_bill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -49,7 +49,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/text_view_value_nomor_pelanggan_panel_data_tagihan"
+                    android:id="@+id/text_view_value_customer_number_bottom_sheet_dialog_fragment_data_bill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="9dp"
@@ -65,7 +65,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/text_view_value_nama_pelanggan_panel_data_tagihan"
+                    android:id="@+id/text_view_value_customer_name_bottom_sheet_dialog_fragment_data_bill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="9dp"
@@ -84,7 +84,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/text_view_value_periode_tagihan_panel_data_tagihan"
+                    android:id="@+id/text_view_value_bill_period_bottom_sheet_dialog_fragment_data_bill"
                     android:layout_marginBottom="9dp"
                     android:text="@string/unknown"
                     android:textColor="@color/colorText"
@@ -99,7 +99,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/text_view_value_tagihan_panel_data_tagihan"
+                    android:id="@+id/text_view_value_bill_bottom_sheet_dialog_fragment_data_bill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="9dp"
@@ -113,6 +113,7 @@
                     android:text="@string/admin_fee"
                     android:textColor="@color/colorSubText"
                     android:textSize="15sp"
+                    android:visibility="gone"
                     />
 
                 <TextView
@@ -123,6 +124,7 @@
                     android:text="@string/unknown"
                     android:textColor="@color/colorText"
                     android:textSize="15sp"
+                    android:visibility="gone"
                     />
 
                 <TextView
@@ -133,7 +135,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/text_view_value_total_tagihan_panel_data_tagihan"
+                    android:id="@+id/text_view_value_total_bill_bottom_sheet_dialog_fragment_data_bill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="9dp"
@@ -145,6 +147,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/colorSubText"
+                    android:visibility="gone"
                     />
 
                 <RelativeLayout
@@ -156,39 +159,19 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/button_simpan_panel_data_tagihan"
+                        android:id="@+id/button_close_bottom_sheet_dialog_fragment_data_bill"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
-                        android:text="@string/simpan"
+                        android:text="@string/close"
                         android:textSize="15sp"
                         android:textColor="@color/colorPrimary"
                         android:paddingTop="9dp"
                         android:paddingRight="10dp"
                         android:paddingBottom="9dp"
                         android:paddingLeft="10dp"
-                        android:layout_toLeftOf="@+id/button_batal_panel_data_tagihan"
-                        android:layout_toStartOf="@+id/button_batal_panel_data_tagihan"
                         android:background="@drawable/background_button_simpan_tagihan"
-                        />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/button_batal_panel_data_tagihan"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:text="@string/batal"
-                        android:textSize="15sp"
-                        android:textColor="@color/colorPrimary"
-                        android:paddingTop="9dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="9dp"
-                        android:paddingLeft="10dp"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:layout_marginStart="@dimen/activity_horizontal_margin"
-                        android:background="@drawable/background_button_simpan_tagihan"
                         />
 
                 </RelativeLayout>
@@ -199,4 +182,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
