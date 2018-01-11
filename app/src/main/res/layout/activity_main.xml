@@ -82,8 +82,7 @@
                         android:paddingBottom="6dp"
                         android:paddingLeft="6dp"
                         android:paddingRight="6dp"
-                        android:paddingTop="6dp"
-                        android:visibility="gone">
+                        android:paddingTop="6dp">
 
                         <ImageView
                             android:layout_width="16dp"
@@ -99,8 +98,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/relative_layout_container_user_folder_activity_main"
                         android:layout_toStartOf="@+id/relative_layout_container_user_folder_activity_main"
-                        android:background="@android:color/darker_gray"
-                        android:visibility="gone" />
+                        android:background="@android:color/darker_gray" />
 
                 </RelativeLayout>
 
