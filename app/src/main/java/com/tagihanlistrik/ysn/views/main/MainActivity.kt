@@ -72,9 +72,9 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
     }
 
     override fun loadData() {
-        // todo: do something in here
+        // todo: do something in here (pending)
         /*if (runService.equals("enabled", true)) {
-            // todo: do something in here
+            // todo: do something in here (pending)
             *//*startService(Intent(this, ServiceTagihanListrik::class.java))*//*
         }
 
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
                 }
             }
             R.id.relative_layout_container_user_folder_activity_main -> {
-                // todo: do something in here
+                // todo: do something in here (pending)
             }
             else -> {
                 /** nothing to do in here */
