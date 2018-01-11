@@ -24,11 +24,32 @@ data class Data(
 		@SerializedName("periode") val periode: String,
 		@SerializedName("tagihan_id") val tagihanId: Int
 ) : Parcelable {
-    override fun writeToParcel(p0: Parcel?, p1: Int) {
+	constructor(parcel: Parcel) : this(
+			parcel.readString(),
+			parcel.readString(),
+			parcel.readInt(),
+			parcel.readInt(),
+			parcel.readInt(),
+			parcel.readInt(),
+			parcel.readString(),
+			parcel.readString(),
+			parcel.readInt())
+
+	override fun writeToParcel(p0: Parcel?, p1: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun describeContents(): Int {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+	companion object CREATOR : Parcelable.Creator<Data> {
+		override fun createFromParcel(parcel: Parcel): Data {
+			return Data(parcel)
+		}
+
+		override fun newArray(size: Int): Array<Data?> {
+			return arrayOfNulls(size)
+		}
+	}
 }
