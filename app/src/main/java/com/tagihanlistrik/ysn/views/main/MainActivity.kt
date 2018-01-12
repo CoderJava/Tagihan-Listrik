@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), MainView, View.OnClickListener {
         progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Please wait")
         progressDialog.setCancelable(false)
-        mainPresenter?.onLoadData(this)
+        mainPresenter?.onLoadData()
     }
 
     private fun initPresenter() {

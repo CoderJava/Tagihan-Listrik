@@ -32,7 +32,7 @@ class MainPresenter : MvpPresenter<MainView> {
         mainView = null
     }
 
-    fun onLoadData(context: Context) {
+    fun onLoadData() {
         /*val settingsDb = SettingsDb(context = context)
         val runService by lazy {
             settingsDb.getSettings()?.get(key = "checkAutomatically")
