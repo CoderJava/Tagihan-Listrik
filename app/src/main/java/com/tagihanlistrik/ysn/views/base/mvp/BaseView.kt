@@ -1,4 +1,4 @@
-package com.tagihanlistrik.ysn.views.base
+package com.tagihanlistrik.ysn.views.base.mvp
 
 /**
  * Created by root on 06/09/17.

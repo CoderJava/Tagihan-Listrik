@@ -1,4 +1,4 @@
-package com.tagihanlistrik.ysn.views.base
+package com.tagihanlistrik.ysn.views.base.mvp
 
 /**
  * Created by yudisetiawan on 1/12/18.

@@ -1,18 +1,15 @@
 package com.tagihanlistrik.ysn.api.bill
 
-import com.tagihanlistrik.ysn.BuildConfig
 import io.reactivex.Observable
 import okhttp3.ResponseBody
-import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Query
 
 /**
  * Created by root on 18/09/17.
  */
-interface ApiBisaTopUp {
+interface Endpoints {
 
-    @Headers("X-Authorization: " + BuildConfig.API_KEY)
     @POST("tagihan/cek")
     fun checkTheBill(
             @Query("product") product: String = "PLN",

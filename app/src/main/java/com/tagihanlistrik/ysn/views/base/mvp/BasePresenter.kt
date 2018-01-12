@@ -1,4 +1,4 @@
-package com.tagihanlistrik.ysn.views.base
+package com.tagihanlistrik.ysn.views.base.mvp
 
 import java.lang.ref.WeakReference
 
