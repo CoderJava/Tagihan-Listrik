@@ -1,7 +1,6 @@
 package com.tagihanlistrik.ysn.views.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import com.tagihanlistrik.ysn.di.component.AppComponent
 import com.tagihanlistrik.ysn.views.base.mvp.BasePresenter
@@ -10,12 +9,12 @@ import com.tagihanlistrik.ysn.views.base.mvp.BaseView
 /**
  * Created by yudisetiawan on 1/12/18.
  */
-abstract class BaseActivity: AppCompatActivity(), BaseView {
+abstract class BaseActivity : AppCompatActivity(), BaseView {
 
     private var presenter: BasePresenter<*>? = null
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         onActivityInject()
     }
 
@@ -39,7 +38,8 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
 
     override fun onDestroy() {
         super.onDestroy()
-        // TODO: do something in here if needed
+        presenter?.detachView()
+        presenter = null
     }
 
 }
