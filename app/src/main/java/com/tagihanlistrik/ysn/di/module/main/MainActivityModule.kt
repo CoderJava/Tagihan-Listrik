@@ -2,7 +2,7 @@ package com.tagihanlistrik.ysn.di.module.main
 
 import com.tagihanlistrik.ysn.api.bill.Endpoints
 import com.tagihanlistrik.ysn.di.ActivityScope
-import com.tagihanlistrik.ysn.views.main.MainPresenter
+import com.tagihanlistrik.ysn.views.ui.main.MainPresenter
 import dagger.Module
 import dagger.Provides
 

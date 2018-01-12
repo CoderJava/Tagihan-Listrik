@@ -3,7 +3,7 @@ package com.tagihanlistrik.ysn.di.component.main
 import com.tagihanlistrik.ysn.di.ActivityScope
 import com.tagihanlistrik.ysn.di.component.AppComponent
 import com.tagihanlistrik.ysn.di.module.main.MainActivityModule
-import com.tagihanlistrik.ysn.views.main.MainActivity
+import com.tagihanlistrik.ysn.views.ui.main.MainActivity
 import dagger.Component
 
 /**

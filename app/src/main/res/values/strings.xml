@@ -16,4 +16,5 @@
     <string name="back_to_main_menu">Back to Main Menu</string>
     <string name="customer_id">Customer ID</string>
     <string name="close">Close</string>
+    <string name="save">Save</string>
 </resources>
