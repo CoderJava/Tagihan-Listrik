@@ -1,4 +1,4 @@
-package com.tagihanlistrik.ysn.views.main
+package com.tagihanlistrik.ysn.views.ui.main
 
 import com.tagihanlistrik.ysn.model.bill.Bill
 import com.tagihanlistrik.ysn.views.base.mvp.BaseView

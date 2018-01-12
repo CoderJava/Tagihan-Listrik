@@ -1,4 +1,4 @@
-package com.tagihanlistrik.ysn.views.main
+package com.tagihanlistrik.ysn.views.ui.main
 
 import android.content.Context
 import android.content.DialogInterface
