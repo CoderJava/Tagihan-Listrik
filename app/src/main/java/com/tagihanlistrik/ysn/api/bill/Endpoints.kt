@@ -14,7 +14,7 @@ interface Endpoints {
     fun checkTheBill(
             @Query("product") product: String = "PLN",
             @Query("phone_number") phoneNumber: String,
-            @Query("nomor_rekening") nomorRekening: String
+            @Query("nomor_rekening") customerId: String
     ): Observable<ResponseBody>
 
 }
