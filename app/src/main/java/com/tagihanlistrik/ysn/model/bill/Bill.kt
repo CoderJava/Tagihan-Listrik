@@ -14,15 +14,15 @@ data class Bill(
 )
 
 data class Data(
-		@SerializedName("no_pelanggan") val noPelanggan: String,
+		@SerializedName("no_pelanggan") val customerId: String,
 		@SerializedName("product_name") val productName: String,
-		@SerializedName("jumlah_tagihan") val jumlahTagihan: Int,
-		@SerializedName("jumlah_bayar") val jumlahBayar: Int,
+		@SerializedName("jumlah_tagihan") val amountTheBill: Int,
+		@SerializedName("jumlah_bayar") val amountPaid: Int,
 		@SerializedName("admin") val admin: Int,
-		@SerializedName("terbayar") val terbayar: Int,
-		@SerializedName("nama") val nama: String,
-		@SerializedName("periode") val periode: String,
-		@SerializedName("tagihan_id") val tagihanId: Int
+		@SerializedName("terbayar") val paidOff: Int,
+		@SerializedName("nama") val customerName: String,
+		@SerializedName("periode") val period: String,
+		@SerializedName("tagihan_id") val billId: Int
 ) : Parcelable {
 	constructor(parcel: Parcel) : this(
 			parcel.readString(),
