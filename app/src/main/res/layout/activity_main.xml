@@ -148,23 +148,37 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/button_check_the_bill_activity_main"
-                style="?android:attr/borderlessButtonStyle"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/background_button_cek_tagihan"
-                android:text="@string/check_the_bill"
-                android:textAllCaps="true"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:typeface="monospace" />
+                android:layout_height="wrap_content">
 
+                <Button
+                    android:id="@+id/button_check_the_bill_activity_main"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/background_button_cek_tagihan"
+                    android:text="@string/check_the_bill"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:typeface="monospace" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progress_bar_loading_activity_main"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
         </LinearLayout>
 
     </RelativeLayout>
