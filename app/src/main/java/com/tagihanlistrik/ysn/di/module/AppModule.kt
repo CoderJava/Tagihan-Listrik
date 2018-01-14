@@ -24,4 +24,5 @@ class AppModule(val application: Application) {
     @Provides
     @Singleton
     fun providesResource() = application.resources
+
 }
