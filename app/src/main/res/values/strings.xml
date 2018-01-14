@@ -17,4 +17,6 @@
     <string name="customer_id">Customer ID</string>
     <string name="close">Close</string>
     <string name="save">Save</string>
+    <string name="bill_info_has_been_updated">Bill info has been updated</string>
+    <string name="bill_info_has_been_saved">Bill info has been saved</string>
 </resources>
