@@ -6,4 +6,5 @@ import javax.inject.Scope
  * Created by yudisetiawan on 1/12/18.
  */
 
-@Scope @Retention annotation class ActivityScope
+@Scope
+@Retention annotation class ActivityScope

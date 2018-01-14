@@ -12,6 +12,7 @@ import com.tagihanlistrik.ysn.di.component.main.DaggerMainActivityComponent
 import com.tagihanlistrik.ysn.di.module.main.MainActivityModule
 import com.tagihanlistrik.ysn.model.bill.Bill
 import com.tagihanlistrik.ysn.views.base.BaseActivity
+import com.tagihanlistrik.ysn.views.ui.billinfo.BillBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -89,9 +90,9 @@ class MainActivity : BaseActivity(), MainView, View.OnClickListener {
         val bundleBill = Bundle()
         bundleBill.putParcelable("dataBill", data)
         Log.d(TAG, "data: $data")
-        /*val billBottomSheetDialogFragment = BillBottomSheetDialogFragment()
+        val billBottomSheetDialogFragment = BillBottomSheetDialogFragment()
         billBottomSheetDialogFragment.arguments = bundleBill
-        billBottomSheetDialogFragment.show(supportFragmentManager, TAG)*/
+        billBottomSheetDialogFragment.show(supportFragmentManager, TAG)
     }
 
     private fun hideLoading() {

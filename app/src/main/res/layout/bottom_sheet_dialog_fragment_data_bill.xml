@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/relative_layout_container_bottom_sheet_dialog_fragment_data_bill"
     android:background="@color/colorPrimary"
     >
 
