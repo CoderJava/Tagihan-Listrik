@@ -13,8 +13,8 @@ interface BillLocalDao {
     @Query("select * from bill_local")
     fun getAllBillsLocal(): List<BillLocal>
 
-    @Query("select * from bill_local where period = :period")
-    fun getBillLocalByPeriod(period: String): BillLocal
+    @Query("select * from bill_local where customer_id = :customerId and period = :period")
+    fun getBillsLocalByCustomerIdAndPeriod(customerId: String, period: String): List<BillLocal>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertBillLocal(billLocal: BillLocal)
