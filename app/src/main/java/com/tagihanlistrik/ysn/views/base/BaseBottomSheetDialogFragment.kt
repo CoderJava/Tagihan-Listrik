@@ -1,5 +1,6 @@
 package com.tagihanlistrik.ysn.views.base
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.support.design.widget.BottomSheetDialogFragment
 import com.tagihanlistrik.ysn.di.component.AppComponent
@@ -14,7 +15,9 @@ abstract class BaseBottomSheetDialogFragment : BottomSheetDialogFragment(), Base
 
     private var presenter: BasePresenter<*>? = null
 
+    @SuppressLint("RestrictedApi")
     override fun setupDialog(dialog: Dialog?, style: Int) {
+        super.setupDialog(dialog, style)
         onBottomSheetDialogFragmentInject()
     }
 
