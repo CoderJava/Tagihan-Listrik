@@ -3,10 +3,8 @@ package com.tagihanlistrik.ysn.di.component
 import android.app.Application
 import com.google.gson.Gson
 import com.tagihanlistrik.ysn.api.bill.Endpoints
-import com.tagihanlistrik.ysn.di.module.ApiModule
-import com.tagihanlistrik.ysn.di.module.AppModule
-import com.tagihanlistrik.ysn.di.module.OkHttpModule
-import com.tagihanlistrik.ysn.di.module.RetrofitModule
+import com.tagihanlistrik.ysn.db.dao.BillLocalDao
+import com.tagihanlistrik.ysn.di.module.*
 import dagger.Component
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -19,7 +17,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(AppModule::class, RetrofitModule::class, ApiModule::class, OkHttpModule::class))
+@Component(modules = arrayOf(AppModule::class, RetrofitModule::class, ApiModule::class, OkHttpModule::class, RoomModule::class))
 interface AppComponent {
 
     fun application(): Application
@@ -35,5 +33,7 @@ interface AppComponent {
     fun client(): OkHttpClient
 
     fun loggingInterceptor(): HttpLoggingInterceptor
+
+    fun billLocalDao(): BillLocalDao
 
 }
