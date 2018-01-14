@@ -27,8 +27,7 @@ class MainPresenter @Inject constructor(var api: Endpoints) : BasePresenter<Main
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                {
-                                    responseBody: ResponseBody ->
+                                { responseBody: ResponseBody ->
                                     val jsonObjectResponseBody = JSONObject(responseBody.string())
                                     val error = jsonObjectResponseBody.getBoolean("error")
                                     val message = jsonObjectResponseBody.getString("message")
@@ -72,8 +71,7 @@ class MainPresenter @Inject constructor(var api: Endpoints) : BasePresenter<Main
                                         }
                                     }
                                 },
-                                {
-                                    throwable: Throwable ->
+                                { throwable: Throwable ->
                                     throwable.printStackTrace()
                                     if (throwable is HttpException) {
                                         val responseBodyError = throwable.response().errorBody()
