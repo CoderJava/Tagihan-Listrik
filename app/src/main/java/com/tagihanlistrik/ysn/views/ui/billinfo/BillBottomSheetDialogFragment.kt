@@ -2,7 +2,9 @@ package com.tagihanlistrik.ysn.views.ui.billinfo
 
 import android.app.Dialog
 import android.support.design.widget.BottomSheetBehavior
+import android.support.design.widget.BottomSheetDialogFragment
 import android.support.design.widget.CoordinatorLayout
+import android.support.design.widget.Snackbar
 import android.view.View
 import com.tagihanlistrik.ysn.R
 import com.tagihanlistrik.ysn.di.component.billinfo.DaggerBillBottomSheetDialogFragmentComponent
@@ -23,7 +25,10 @@ class BillBottomSheetDialogFragment : BaseBottomSheetDialogFragment(), BillView,
     @Inject
     lateinit var presenter: BillPresenter
 
+    private lateinit var billData: Data
+
     override fun setupDialog(dialog: Dialog?, style: Int) {
+        super.setupDialog(dialog, style)
         val view = View.inflate(
                 context,
                 R.layout.bottom_sheet_dialog_fragment_data_bill,
@@ -80,6 +85,7 @@ class BillBottomSheetDialogFragment : BaseBottomSheetDialogFragment(), BillView,
                 }
                 R.id.button_save_bottom_sheet_dialog_fragment_data_bill -> {
                     // TODO: do something in here (pending)
+                    presenter.onSaveDataBill(billData)
                 }
                 else -> {
                     /** nothing to do in here */
@@ -90,7 +96,7 @@ class BillBottomSheetDialogFragment : BaseBottomSheetDialogFragment(), BillView,
 
     private fun doLoadData(view: View) {
         val bundle = arguments
-        val billData = bundle.getParcelable<Data>("dataBill")
+        billData = bundle.getParcelable<Data>("dataBill")
         view.let {
             it.text_view_value_customer_number_bottom_sheet_dialog_fragment_data_bill.text = billData.customerId
             it.text_view_value_customer_name_bottom_sheet_dialog_fragment_data_bill.text = billData.customerName
@@ -103,6 +109,30 @@ class BillBottomSheetDialogFragment : BaseBottomSheetDialogFragment(), BillView,
             val totalBill = "Rp. ${decimalFormat.format(billData.amountPaid)}"
             it.text_view_value_total_bill_bottom_sheet_dialog_fragment_data_bill.text = totalBill
         }
+    }
+
+    override fun saveDataBill(isUpdated: Boolean) {
+        val message = isUpdated.let {
+            when (it) {
+                true -> {
+                    getString(R.string.bill_info_has_been_updated)
+                }
+                else -> {
+                    getString(R.string.bill_info_has_been_saved)
+                }
+            }
+        }
+        showSnackbar(message = message, duration = Snackbar.LENGTH_LONG)
+        dismiss()
+    }
+
+    override fun saveDataBillFailed(message: String) {
+        showSnackbar(message = message, duration = Snackbar.LENGTH_LONG)
+    }
+
+    fun BottomSheetDialogFragment.showSnackbar(message: CharSequence, duration: Int) {
+        Snackbar.make(activity.findViewById(android.R.id.content), message, duration)
+                .show()
     }
 
 }
