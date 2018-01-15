@@ -2,9 +2,12 @@ package com.tagihanlistrik.ysn.views.ui.main
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.tagihanlistrik.ysn.R
@@ -12,6 +15,7 @@ import com.tagihanlistrik.ysn.di.component.main.DaggerMainActivityComponent
 import com.tagihanlistrik.ysn.di.module.main.MainActivityModule
 import com.tagihanlistrik.ysn.model.bill.Bill
 import com.tagihanlistrik.ysn.views.base.BaseActivity
+import com.tagihanlistrik.ysn.views.ui.about.AboutActivity
 import com.tagihanlistrik.ysn.views.ui.billinfo.BillBottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -75,7 +79,7 @@ class MainActivity : BaseActivity(), MainView, View.OnClickListener {
                     presenter.onCheckTheBill(customerId = customerId, phoneNumber = phoneNumber)
                 }
                 R.id.relative_layout_container_user_folder_activity_main -> {
-                    // TODO: do something in here
+                    // TODO: do something in here (pending)
                 }
                 else -> {
                     /** nothing to do in here */
@@ -117,4 +121,24 @@ class MainActivity : BaseActivity(), MainView, View.OnClickListener {
             it.create()
         }.show()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean =
+            menuInflater.inflate(R.menu.menu_main_activity, menu).let {
+                true
+            }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean =
+            item?.itemId.let {
+                when (it) {
+                    R.id.menu_item_about_menu_main_activity -> {
+                        val intentAboutActivity = Intent(this, AboutActivity::class.java)
+                        startActivity(intentAboutActivity)
+                        true
+                    }
+                    else -> {
+                        super.onOptionsItemSelected(item)
+                    }
+                }
+            }
+
 }
