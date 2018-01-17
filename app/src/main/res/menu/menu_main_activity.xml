@@ -6,5 +6,11 @@
         android:icon="@drawable/ic_info_outline_white_24dp"
         android:orderInCategory="1"
         android:title="@string/about"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_item_history_bill_menu_main_activity"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:orderInCategory="2"
+        android:title="@string/history"
+        app:showAsAction="never" />
 </menu>

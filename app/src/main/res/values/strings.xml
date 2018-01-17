@@ -23,4 +23,5 @@
     <string name="image_view_logo_app">Image View logo app</string>
     <string name="app_version">1.0.0</string>
     <string name="copyright_u00a9_2018">Copyright © 2018</string>
+    <string name="history">History</string>
 </resources>
