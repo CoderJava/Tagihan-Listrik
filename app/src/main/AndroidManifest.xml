@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.ui.about.AboutActivity"></activity>
+        <activity android:name=".views.ui.about.AboutActivity" />
+        <activity android:name=".views.ui.history.HistoryActivity"></activity>
     </application>
 
 </manifest>
