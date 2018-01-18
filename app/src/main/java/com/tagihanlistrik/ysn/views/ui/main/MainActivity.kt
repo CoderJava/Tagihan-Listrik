@@ -17,6 +17,7 @@ import com.tagihanlistrik.ysn.model.bill.Bill
 import com.tagihanlistrik.ysn.views.base.BaseActivity
 import com.tagihanlistrik.ysn.views.ui.about.AboutActivity
 import com.tagihanlistrik.ysn.views.ui.billinfo.BillBottomSheetDialogFragment
+import com.tagihanlistrik.ysn.views.ui.history.HistoryActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -132,7 +133,12 @@ class MainActivity : BaseActivity(), MainView, View.OnClickListener {
                 when (it) {
                     R.id.menu_item_about_menu_main_activity -> {
                         val intentAboutActivity = Intent(this, AboutActivity::class.java)
-                        startActivity(intentAboutActivity)
+                                .let { startActivity(it) }
+                        true
+                    }
+                    R.id.menu_item_history_bill_menu_main_activity -> {
+                        val intentHistoryActivity = Intent(this, HistoryActivity::class.java)
+                                .let { startActivity(it) }
                         true
                     }
                     else -> {
