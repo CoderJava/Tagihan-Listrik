@@ -26,4 +26,6 @@
     <string name="history">History</string>
     <string name="example_bill_value">Rp 1.955.000</string>
     <string name="history_bill">History Bill</string>
+    <string name="image_view_bill_history_not_found">image view bill history not found</string>
+    <string name="data_not_available">Data not available</string>
 </resources>
