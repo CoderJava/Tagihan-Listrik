@@ -3,9 +3,8 @@
     android:id="@+id/relative_layout_container_item_bill_history"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    >
+    android:paddingTop="8dp">
 
     <TextView
         android:id="@+id/text_view_customer_name_item_bill_history"
