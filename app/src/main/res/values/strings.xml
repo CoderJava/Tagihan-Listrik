@@ -28,4 +28,5 @@
     <string name="history_bill">History Bill</string>
     <string name="image_view_bill_history_not_found">image view bill history not found</string>
     <string name="data_not_available">Data not available</string>
+    <string name="image_view_logo_dbs">image view logo dbs</string>
 </resources>
