@@ -34,7 +34,11 @@ class HistoryActivity : BaseActivity(), HistoryView {
     }
 
     override fun loadData(adapterBillHistory: AdapterBillHistory) {
-        hideDataNotFound()
+        if (adapterBillHistory.itemCount == 0) {
+            showDataNotFound()
+        } else {
+            hideDataNotFound()
+        }
         val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         recycler_view_bill_history_activity_history.addItemDecoration(dividerItemDecoration)
         recycler_view_bill_history_activity_history.layoutManager = LinearLayoutManager(this)
